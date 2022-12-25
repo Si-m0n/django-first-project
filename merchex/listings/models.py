@@ -14,6 +14,7 @@ class Band(models.Model):
     year_formed = models.fields.IntegerField(
         validators=[MinValueValidator(1900), MaxValueValidator(2021)]
     )
+    # type: ignore
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
 
