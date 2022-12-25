@@ -40,5 +40,7 @@ class Listing(models.Model):
     year = models.fields.IntegerField(null=True)
     type = models.fields.CharField(choices=Type.choices, max_length=10)
 
+    band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
+
     def __str__(self) -> str:
         return f"{self.title}"
