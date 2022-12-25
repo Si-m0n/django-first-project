@@ -11,7 +11,7 @@ class Band(models.Model):
         HARD_ROCK = "HR"
 
     name = models.fields.CharField(max_length=100)
-    genre = models.fields.CharField(choices=Genre.choices, max_length=5)
+    # type: ignore    genre = models.fields.CharField(choices=Genre.choices, max_length=5)
     biography = models.fields.CharField(max_length=1000)
     year_formed = models.fields.IntegerField(
         validators=[MinValueValidator(1900), MaxValueValidator(2021)]
@@ -39,6 +39,8 @@ class Listing(models.Model):
     sold = models.fields.BooleanField(default=False)
     year = models.fields.IntegerField(null=True)
     type = models.fields.CharField(choices=Type.choices, max_length=10)
+
+    band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
 
     def __str__(self) -> str:
         return f"{self.title}"
