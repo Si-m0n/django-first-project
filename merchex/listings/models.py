@@ -19,6 +19,7 @@ class Band(models.Model):
     # type: ignore
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
+    genre = models.fields.CharField(choices=Genre.choices, max_length=5)
 
     def __str__(self) -> str:
         return f"{self.name}"
