@@ -9,6 +9,7 @@ class Band(models.Model):
         ALTERNATIVE_ROCK = "AR"
         ELECTRO = "EL"
         HARD_ROCK = "HR"
+        ROCK = "RK"
 
     name = models.fields.CharField(max_length=100)
     # type: ignore    genre = models.fields.CharField(choices=Genre.choices, max_length=5)
