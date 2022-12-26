@@ -14,6 +14,7 @@
 
 <h3>Vendu : {{ listing.sold| yesno}}</h3>
 
+<a href="{% url 'listings-change' listing.id%}">Modifier l'annonce</a>
 <a href="{% url 'listings-list' %}">Retour aux listings</a>
 
 {% endblock %}
