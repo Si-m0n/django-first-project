@@ -1,5 +1,6 @@
 {%extends 'listings/base.html'%} {%block content%}
 <h1>Listings</h1>
+<a href="{% url 'listings-create' %}">Créer une nouvelle annonce</a>
 <ul>
   {%for listing in listings%}
   <li>
